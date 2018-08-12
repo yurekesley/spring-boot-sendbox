@@ -10,12 +10,16 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 @Configuration
 public class BDConfig {
 	
+	
 	@Bean
 	public DataSource dataSource() {
 		return new EmbeddedDatabaseBuilder()
-				.generateUniqueName(true)
+				.generateUniqueName(false)
+				.setName("boot")
 				.setType(EmbeddedDatabaseType.H2)
 				.setScriptEncoding("UTF-8")
+				.addScript("bd/script.sql")
 				.build();
 	}
+	
 }

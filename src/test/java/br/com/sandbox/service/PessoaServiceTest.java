@@ -2,29 +2,37 @@ package br.com.sandbox.service;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
+import br.com.sandbox.model.Usuario;
 import br.com.sandbox.repository.UsuarioRepository;
 
-@RunWith(SpringRunner.class)
-@DataJpaTest
+@RunWith(MockitoJUnitRunner.class)
 public class PessoaServiceTest {
-
-	@Autowired
-	private TestEntityManager entityManager;
 	
-	@Autowired
+	private Usuario usuario;
+	
+	@Mock
 	private UsuarioRepository urUsuarioRepository;
+	
+	@Mock
+	private UsuarioService service;
+	
+	@Before
+	public void before() {
+		
+	}
+	
+	
 	
 	@Test
 	public void deveRetornarQuatro () {
-		this.entityManager = null;
-		assertEquals(4, urUsuarioRepository.count());
+		System.out.println("xxxxxxxxxxxxxx"+service.teste());
+		assertEquals(10, 10);
 	}
 
 }

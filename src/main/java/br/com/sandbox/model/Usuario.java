@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
@@ -15,13 +16,14 @@ public class Usuario {
 	public Usuario() {}
 	
 	@Id @GeneratedValue
-	private Integer id;
+	private Long id;
 	
+	@NotNull
 	private String nome;
 	
 	private String email;
 
-	public Usuario(Integer id, String nome, String email) {
+	public Usuario(Long id, String nome, String email) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;

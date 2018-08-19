@@ -1,9 +1,12 @@
-package br.com.sandbox.config;
+package br.com.sandbox;
 
 import org.springframework.context.annotation.Configuration;
 
+
 @Configuration
-public class BDConfig {
+public class BDConfigTest {
 		
+	
+	
 	
 }
